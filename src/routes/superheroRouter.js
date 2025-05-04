@@ -11,14 +11,14 @@ const { authenticateToken, hasPermission } = require('../middleware/authMiddlewa
 
 // Rutas públicas
 //Verifricamos si el usuario tiene acceso y luego verificamos si tiene permisos
-router.get('/', authenticateToken, hasPermission('read:superheros'), getSuperheros);
-router.get('/:id', authenticateToken, hasPermission('read:superheros'), getSuperheroById);
+router.get('/', authenticateToken, hasPermission('read:cliente'), getSuperheros);
+router.get('/:id', authenticateToken, hasPermission('read:cliente'), getSuperheroById);
 
 // Rutas protegidas
-router.post('/', authenticateToken, hasPermission('create:superheros'), createSuperhero);
+router.post('/', authenticateToken, hasPermission('create:cliente'), createSuperhero);
 
-router.put('/:id', authenticateToken,hasPermission('update:superheros'), updateSuperhero);
+router.put('/:id', authenticateToken, hasPermission('update:cliente'), updateSuperhero);
 
-router.delete('/:id', authenticateToken, hasPermission('delete:superheros'), deleteSuperhero);
+router.delete('/:id', authenticateToken, hasPermission('delete:cliente'), deleteSuperhero);
 
 module.exports = router;
