@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const superheroRouter = require('./superheroRouter');
+const clienteRouter = require('./clienteRouter');
 const authRouter = require('./authRouter');
 
-router.use('/superheros', superheroRouter);
+router.use('/cliente', clienteRouter);
 router.use('/auth', authRouter);
 
 module.exports = router;
